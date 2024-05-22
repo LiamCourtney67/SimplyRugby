@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Account.ManageAccounts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Account"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <!--This page can only be accessed by an admin-->    
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                   Text="Manage Accounts" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+
+        <!--Account Select-->
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Account:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="AccountSelect" Grid.Row="1" Grid.Column="1"
+                 HorizontalAlignment="Stretch" PlaceholderText="Select account..." Margin="10"
+                 ItemsSource="{Binding}" DisplayMemberPath="Username" SelectionChanged="AccountSelect_SelectionChanged"/>
+        
+        <!--Account Type-->
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Account Type:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="AccountTypeSelect" Grid.Row="2" Grid.Column="1"
+                  HorizontalAlignment="Stretch" PlaceholderText="Select account type..." Margin="10"
+                  ItemsSource="{Binding}" SelectionChanged="AccountTypeSelect_SelectionChanged" IsEnabled="False"/>
+        
+        <!--Coach Account Fields-->
+        
+        <!--Team Select-->
+        <TextBlock x:Name="TeamSelectTitle" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Team:" FontSize="24" Foreground="White" Margin="10" Visibility="Collapsed"/>
+
+        <ComboBox x:Name="TeamSelect" Grid.Row="3" Grid.Column="1"
+                 HorizontalAlignment="Stretch" PlaceholderText="Select team..." Margin="10"
+                 ItemsSource="{Binding}" DisplayMemberPath="Name" SelectionChanged="TeamSelect_SelectionChanged" Visibility="Collapsed"/>
+
+        <!--Coach Select-->
+        <TextBlock x:Name="CoachSelectTitle" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Coach:" FontSize="24" Foreground="White" Margin="10" Visibility="Collapsed"/>
+
+        <ComboBox x:Name="CoachSelect" Grid.Row="4" Grid.Column="1"
+                 HorizontalAlignment="Stretch" PlaceholderText="Select coach..." Margin="10"
+                 ItemsSource="{Binding}" DisplayMemberPath="Name" SelectionChanged="CoachSelect_SelectionChanged" Visibility="Collapsed"/>
+
+        <!--Update Account Button-->
+        <Button x:Name="UpdateAccountButton" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Update Account" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="UpdateButton_Click"/>
+    
+        <!--Reset Password Button-->
+        <Button x:Name="ResetPasswordButton" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Reset Password" FontWeight="Bold" Width="300" Background="LightGray" Foreground="#044d85"
+                Click="ResetPasswordButton_Click"/>
+
+        <!--Delete Account Button-->
+        <Button x:Name="DeleteAccountButton" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Delete Account" FontWeight="Bold" Width="300" Margin="10" Background="Red" Foreground="White"
+                Click="DeleteButton_Click"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="18" FontStyle="Italic" Foreground="Gray" TextWrapping="Wrap" TextAlignment="Center"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SimplyRugby (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SimplyRugby (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

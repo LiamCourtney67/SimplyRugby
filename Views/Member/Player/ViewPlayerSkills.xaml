@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Member.Player.ViewPlayerSkills"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Member.Player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"
+                   Text="View Skills" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+
+        <!--Player-->
+        <TextBlock x:Name="PlayerTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Player:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="PlayerBlock" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <!--Kicking-->
+        <TextBlock x:Name="KickingTitle" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" 
+                   Text="Kicking" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+        <!--Rating and Comments-->
+        <TextBlock Grid.Row="3" Grid.Column="1" TextAlignment="Center"
+                   Width="Auto" Text="Rating" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="2" TextAlignment="Center"
+                   Width="Auto" Text="Comments" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <!--Drop-->
+        <TextBlock x:Name="DropKickingTitle" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Drop:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="DropKickingBlock" Grid.Row="4" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="DropKickingBox" Grid.Row="4" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="DropKickingCommentsBox" Grid.Row="4" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Goal-->
+        <TextBlock x:Name="GoalKickingTitle" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Goal:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="GoalKickingBlock" Grid.Row="5" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="GoalKickingBox" Grid.Row="5" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="GoalKickingCommentsBox" Grid.Row="5" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Grubber-->
+        <TextBlock x:Name="GrubberKickingTitle" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Grubber:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="GrubberKickingBlock" Grid.Row="6" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="GrubberKickingBox" Grid.Row="6" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="GrubberKickingCommentsBox" Grid.Row="6" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Punt-->
+        <TextBlock x:Name="PuntKickingTitle" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Punt:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="PuntKickingBlock" Grid.Row="7" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="PuntKickingBox" Grid.Row="7" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="PuntKickingCommentsBox" Grid.Row="7" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Average-->
+        <TextBlock x:Name="AverageKickingTitle" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Average:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="AverageKickingBlock" Grid.Row="8" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <TextBox x:Name="AverageKickingCommentsBox" Grid.Row="8" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Passing-->
+        <TextBlock x:Name="PassingTitle" Grid.Row="9" Grid.ColumnSpan="3" HorizontalAlignment="Center" 
+                   Text="Passing" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+        <!--Rating and Comments-->
+        <TextBlock Grid.Row="10" Grid.Column="1" TextAlignment="Center"
+                   Width="Auto" Text="Rating" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="10" Grid.Column="2" TextAlignment="Center"
+                   Width="Auto" Text="Comments" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <!--Pop-->
+        <TextBlock x:Name="PopPassingTitle" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Pop:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="PopPassingBlock" Grid.Row="11" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="PopPassingBox" Grid.Row="11" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="PopPassingCommentsBox" Grid.Row="11" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Spin-->
+        <TextBlock x:Name="SpinPassingTitle" Grid.Row="12" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Spin:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="SpinPassingBlock" Grid.Row="12" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="SpinPassingBox" Grid.Row="12" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="SpinPassingCommentsBox" Grid.Row="12" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Standard-->
+        <TextBlock x:Name="StandardPassingTitle" Grid.Row="13" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Standard:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="StandardPassingBlock" Grid.Row="13" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="StandardPassingBox" Grid.Row="13" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="StandardPassingCommentsBox" Grid.Row="13" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Average-->
+        <TextBlock x:Name="AveragePassingTitle" Grid.Row="14" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Average:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="AveragePassingBlock" Grid.Row="14" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <TextBox x:Name="AveragePassingCommentsBox" Grid.Row="14" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Tackling-->
+        <TextBlock x:Name="TacklingTitle" Grid.Row="15" Grid.ColumnSpan="3" HorizontalAlignment="Center" 
+                   Text="Tackling" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+        <!--Rating and Comments-->
+        <TextBlock Grid.Row="16" Grid.Column="1" TextAlignment="Center"
+                   Width="Auto" Text="Rating" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="16" Grid.Column="2" TextAlignment="Center"
+                   Width="Auto" Text="Comments" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <!--Front-->
+        <TextBlock x:Name="FrontTacklingTitle" Grid.Row="17" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Front:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="FrontTacklingBlock" Grid.Row="17" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="FrontTacklingBox" Grid.Row="17" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="FrontTacklingCommentsBox" Grid.Row="17" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Rear-->
+        <TextBlock x:Name="RearTacklingTitle" Grid.Row="18" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Rear:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="RearTacklingBlock" Grid.Row="18" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="RearTacklingBox" Grid.Row="18" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="RearTacklingCommentsBox" Grid.Row="18" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Scramble-->
+        <TextBlock x:Name="ScrambleTacklingTitle" Grid.Row="19" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Scramble:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="ScrambleTacklingBlock" Grid.Row="19" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="ScrambleTacklingBox" Grid.Row="19" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="ScrambleTacklingCommentsBox" Grid.Row="19" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Side-->
+        <TextBlock x:Name="SideTacklingTitle" Grid.Row="20" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Side:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="SideTacklingBlock" Grid.Row="20" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <NumberBox x:Name="SideTacklingBox" Grid.Row="20" Grid.Column="1"
+                   Width="Auto" Value="{Binding}" Margin="10" Visibility="Collapsed"
+                   Minimum="1" Maximum="5"/>
+
+        <TextBox x:Name="SideTacklingCommentsBox" Grid.Row="20" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Average-->
+        <TextBlock x:Name="AverageTacklingTitle" Grid.Row="21" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Average:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="AverageTacklingBlock" Grid.Row="21" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <TextBox x:Name="AverageTacklingCommentsBox" Grid.Row="21" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Total Average Title-->
+        <TextBlock x:Name="TotalAverageTitle" Grid.Row="22" Grid.ColumnSpan="3" HorizontalAlignment="Center" 
+                   Text="Total Average" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+        <!--Rating and Comments-->
+        <TextBlock Grid.Row="23" Grid.Column="1" TextAlignment="Center"
+                   Width="Auto" Text="Rating" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="23" Grid.Column="2" TextAlignment="Center"
+                   Width="Auto" Text="Comments" FontWeight="Bold" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <!--Total Average-->
+        <TextBlock x:Name="AverageTitle" Grid.Row="24" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Average:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="AverageBlock" Grid.Row="24" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextAlignment="Center"/>
+
+        <TextBox x:Name="AverageCommentsBox" Grid.Row="24" Grid.Column="2"
+                 HorizontalAlignment="Stretch" Text="{Binding}" PlaceholderText="N/A" Margin="10"
+                 Visibility="Visible" IsEnabled="False" MaxLength="100" TextWrapping="Wrap" MaxHeight="100"/>
+
+        <!--Edit, Update, And Cancel Buttons-->
+        <Button x:Name="EditButton" Grid.Row="25" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Edit Skills" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="EditButton_Click"/>
+
+        <Button x:Name="UpdateButton" Grid.Row="25" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Update Skills" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="UpdateButton_Click" Visibility="Collapsed"/>
+
+        <Button x:Name="CancelButton" Grid.Row="26" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="Cancel" FontWeight="Bold" Width="300" Background="Red" Foreground="White"
+                Click="CancelButton_Click" Visibility="Collapsed"/>
+
+        <Button x:Name="ReturnButton" Grid.Row="26" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Return to View Player" FontStyle="Italic" FontWeight="SemiBold" Width="300" Background="LightGray" Foreground="#044d85"
+                Click="ReturnButton_Click"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="27" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="18" FontStyle="Italic" Foreground="Gray" Margin="10" TextWrapping="Wrap" TextAlignment="Center"/>
+    </Grid>
+</Page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Portals.NewUserPortal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Portals"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid>
+        <!--New User Nav-->
+        <NavigationView x:Name="NewUserNav"
+                        ItemInvoked="NewUserNav_ItemInvoked" PaneDisplayMode="Top"
+                        IsBackButtonVisible="Collapsed" IsSettingsVisible="False"
+                        Background="White">
+
+            <!--Title-->
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Simply Rugby" Foreground="White" Background="#044d85" FontWeight="Bold"/>
+            </NavigationView.MenuItems>
+
+            <!--Account, Logout, and Help-->
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem x:Name="AccountUsername" Tag="ViewAccount" Background="#044d85"/>
+                <NavigationViewItem Tag="Logout" Content="Logout" Background="#044d85"/>
+
+                <NavigationViewItem x:Name="HelpButton" Tag="Help" IsSelected="False">
+                    <FontIcon x:Name="HelpButtonIcon" Glyph="&#xE946;" FontFamily="Segoe MDL2 Assets"/>
+                </NavigationViewItem>
+
+            </NavigationView.FooterMenuItems>
+
+            <!--New User Frame-->
+            <ScrollViewer>
+                <Frame x:Name="NewUserFrame" Background="#044d85">
+                    <TextBlock Text="Please contact your system administrator to verify your access level..." HorizontalAlignment="Center" VerticalAlignment="Top" 
+                               FontSize="30" Margin="0,20,0,0" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+                </Frame>
+            </ScrollViewer>
+
+        </NavigationView>
+    </Grid>
+</Page>

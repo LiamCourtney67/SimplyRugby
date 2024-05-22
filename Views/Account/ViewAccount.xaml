@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Account.ViewAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Account"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                   Text="View Account" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+        
+        <!--Username-->
+        <TextBlock x:Name="UsernameTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Username:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="UsernameBlock" Grid.Row="1" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <!--Name-->
+        <TextBlock x:Name="FirstNameTitle" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="First Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="FirstNameBlock" Grid.Row="2" Grid.Column="1"
+                 Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="FirstNameBox" Grid.Row="2" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter first name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+        <TextBlock x:Name="LastNameTitle" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Last Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="LastNameBlock" Grid.Row="3" Grid.Column="1"
+                 Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="LastNameBox" Grid.Row="3" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter last name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+        <!--Email-->
+        <TextBlock x:Name="EmailTitle" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Email:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="EmailBlock" Grid.Row="4" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="EmailBox" Grid.Row="4" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter email..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap"/>
+
+        <!--Edit, Delete, Update, And Cancel Buttons-->
+        <Button x:Name="EditButton" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Edit Account" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="EditButton_Click"/>
+
+        <Button x:Name="UpdateButton" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Update Account" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="UpdateButton_Click" Visibility="Collapsed"/>
+
+        <Button x:Name="DeleteButton" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="Delete Account" FontWeight="Bold" Width="300" Background="Red" Foreground="White"
+                Click="DeleteButton_Click"/>
+
+        <Button x:Name="CancelButton" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="Cancel" FontWeight="Bold" Width="300" Margin="10" Background="Red" Foreground="White"
+                Click="CancelButton_Click" Visibility="Collapsed"/>
+        
+        <!--Change Password-->
+        <Button x:Name="ChangePasswordButton" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Change Password" FontWeight="Bold" Width="300" Background="LightGray" Foreground="#044d85"
+                Click="ChangePasswordButton_Click" Visibility="Collapsed"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="18" FontStyle="Italic" Foreground="Gray" Margin="10" TextWrapping="Wrap" TextAlignment="Center"/>
+    </Grid>
+</Page>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Account.CreateAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Account"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid VerticalAlignment="Center" Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Text="Simply Rugby" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+
+        <!--Username-->
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                Text="Username:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBox x:Name="UsernameBox" Grid.Row="1" Grid.Column="1"
+              Width="Auto" PlaceholderText="Enter username..." Margin="10" TextWrapping="Wrap" MaxLength="20"/>
+
+        <!--Password-->
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                Text="Password:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <PasswordBox x:Name="PasswordBox" Grid.Row="2" Grid.Column="1" 
+                  Width="Auto" PlaceholderText="Enter password..." Margin="10" MaxLength="20"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+                Text="Confirm:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="3" Grid.Column="1" 
+                  Width="Auto" PlaceholderText="Confirm password..." Margin="10" MaxLength="20"/>
+
+        <!--Name-->
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+                Text="First Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBox x:Name="FirstNameBox" Grid.Row="4" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter first name..." Margin="10" TextWrapping="Wrap" MaxLength="20"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"
+                   Text="Last Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBox x:Name="LastNameBox" Grid.Row="5" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter last name..." Margin="10" TextWrapping="Wrap" MaxLength="20"/>
+
+        <!--Email-->
+        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" 
+                Text="Email:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBox x:Name="EmailBox" Grid.Row="6" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter email..." Margin="10" TextWrapping="Wrap"/>
+
+        <!--Login and Create Account Buttons-->
+        <Button x:Name="CreateAccountButton" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+             Content="Create Account" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+             Click="CreateAccountButton_ClickAsync"/>
+
+        <Button x:Name="ReturnToLoginButton" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+             Content="Return to Login" FontStyle="Italic" FontWeight="SemiBold" Width="300" Background="LightGray" Foreground="#044d85"
+             Click="ReturnToLoginButton_Click"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="9" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                FontSize="18" FontStyle="Italic" Foreground="Gray" Margin="10" TextWrapping="Wrap" TextAlignment="Center"/>
+    </Grid>
+</Page>

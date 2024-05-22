@@ -1,0 +1,209 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>SimplyRugby</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <PublishProfile>FolderProfile.pubxml</PublishProfile>
+	<UseRidGraph>true</UseRidGraph>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>true</EnableMsixTooling>
+	<Nullable>enable</Nullable>
+	<Title>Simply Rugby</Title>
+	<ApplicationIcon>Assets\StoreLogo.ico</ApplicationIcon>
+	<PackageIcon>StoreLogo.png</PackageIcon>
+	<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+	<GenerateDocumentationFile>False</GenerateDocumentationFile>
+	<UserSecretsId>00b52a16-8977-46ef-b46c-3e0657a944de</UserSecretsId>
+	<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+	<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+	<PackageCertificateKeyFile>SimplyRugby_TemporaryKey.pfx</PackageCertificateKeyFile>
+	<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+	<AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+	<AppxPackageDir>C:\Users\liamc\Desktop\</AppxPackageDir>
+	<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+	<GenerateTestArtifacts>True</GenerateTestArtifacts>
+	<AppxBundle>Never</AppxBundle>
+	<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+	<DefaultLanguage>en-gb</DefaultLanguage>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Views\Account\CreateAccount.xaml" />
+    <None Remove="Views\Account\Login.xaml" />
+    <None Remove="Views\Account\ManageAccounts.xaml" />
+    <None Remove="Views\Account\ViewAccount.xaml" />
+    <None Remove="Views\CreateAccount.xaml" />
+    <None Remove="Views\Member\AddMember.xaml" />
+    <None Remove="Views\Member\Coach\AddCoach.xaml" />
+    <None Remove="Views\Member\Coach\ViewCoach.xaml" />
+    <None Remove="Views\Member\Player\AddPlayer.xaml" />
+    <None Remove="Views\Member\Player\ViewPlayer.xaml" />
+    <None Remove="Views\Member\Player\ViewPlayerSkills.xaml" />
+    <None Remove="Views\Member\ViewMember.xaml" />
+    <None Remove="Views\Portals\AdminPortal.xaml" />
+    <None Remove="Views\Portals\CoachPortal.xaml" />
+    <None Remove="Views\Portals\NewUserPortal.xaml" />
+    <None Remove="Views\Team\AddTeam.xaml" />
+    <None Remove="Views\Team\Match\AddMatch.xaml" />
+    <None Remove="Views\Team\Match\ViewMatch.xaml" />
+    <None Remove="Views\Team\TrainingSession\AddTrainingSession.xaml" />
+    <None Remove="Views\Team\TrainingSession\ViewTrainingSession.xaml" />
+    <None Remove="Views\Team\ViewTeam.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="EmailValidation" Version="1.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240404000" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
+    <PackageReference Include="Profanity.Detector" Version="0.1.8" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+  <!-- 
+    Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+    Tools extension to be activated for this project even if the Windows App SDK Nuget
+    package has not yet been restored.
+  -->
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Assets\StoreLogo.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\Player\ViewPlayerSkills.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Account\ManageAccounts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Account\ViewAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\ViewMember.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\AddMember.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Portals\NewUserPortal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Portals\CoachPortal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\Coach\ViewCoach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\Player\ViewPlayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Team\TrainingSession\ViewTrainingSession.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Team\Match\ViewMatch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Account\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\CreateAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Account\CreateAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\Player\AddPlayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Member\Coach\AddCoach.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Team\TrainingSession\AddTrainingSession.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Team\Match\AddMatch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Team\ViewTeam.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Team\AddTeam.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Portals\AdminPortal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <!-- 
+    Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
+    Explorer "Package and Publish" context menu entry to be enabled for this project even if 
+    the Windows App SDK Nuget package has not yet been restored.
+  -->
+  <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+</Project>

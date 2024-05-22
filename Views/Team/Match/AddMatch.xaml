@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Team.Match.AddMatch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Team.Match"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                   Text="Add Match" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+
+        <!--Team Select (For Admin Only)-->
+        <TextBlock x:Name="TeamSelectTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Team:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="TeamSelect" Grid.Row="1" Grid.Column="1"
+                 HorizontalAlignment="Stretch" PlaceholderText="Select team..." Margin="10"
+                 ItemsSource="{Binding}" DisplayMemberPath="Name" SelectionChanged="TeamSelect_SelectionChanged"/>
+
+        <!--Opponent-->
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Opponent:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBox x:Name="OpponentBox" Grid.Row="2" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter opponent..." Margin="10" MaxLength="20"/>
+
+        <!--Location-->
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Location:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="LocationSelect" Grid.Row="3" Grid.Column="1"
+                 HorizontalAlignment="Stretch" PlaceholderText="Select location..." Margin="10"
+                 ItemsSource="{Binding}"/>
+
+        <!--Date-->
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Date:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <DatePicker x:Name="DateBox" Grid.Row="4" Grid.Column="1"
+                    HorizontalAlignment="Stretch" Width="Auto" Margin="10" DateChanged="DateBox_DateChanged"/>
+
+        <!--Time-->
+        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Kick Off Time:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TimePicker x:Name="TimeBox" Grid.Row="5" Grid.Column="1"
+                    HorizontalAlignment="Stretch" Width="Auto" Margin="10" TimeChanged="TimeBox_TimeChanged"/>
+
+        <!--First Half Result-->
+        <TextBlock Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                   Text="First Half Result" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+        <Grid Grid.Row="7" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Team Score-->
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Team" FontSize="24" Foreground="White" Margin="10"/>
+
+            <NumberBox x:Name="FirstHalfTeamScoreBox" Grid.Row="0" Grid.Column="1"
+                   Width="Auto" PlaceholderText="0" Margin="10" Minimum="0" Maximum="99"/>
+
+            <!--Opponent Score-->
+            <TextBlock Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" 
+                   Text="Opponent" FontSize="24" Foreground="White" Margin="10"/>
+
+            <NumberBox x:Name="FirstHalfOpponentScoreBox" Grid.Row="0" Grid.Column="2"
+                   Width="Auto" PlaceholderText="0" Margin="10" Minimum="0" Maximum="99"/>
+
+            <!--First Half Comments-->
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Comments:" FontSize="24" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+            <TextBox x:Name="FirstHalfCommentsBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                 Width="Auto" TextWrapping="Wrap" PlaceholderText="Enter first half comments..." Margin="10, 10, 40, 10" MaxLength="280"/>
+
+        </Grid>
+        
+        <!--Second Half Result-->
+        <TextBlock Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                   Text="Second Half Result" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+        <Grid Grid.Row="9" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Team Score-->
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Team" FontSize="24" Foreground="White" Margin="10"/>
+
+            <NumberBox x:Name="SecondHalfTeamScoreBox" Grid.Row="0" Grid.Column="1"
+                   Width="Auto" PlaceholderText="0" Margin="10" Minimum="0" Maximum="99"/>
+
+            <!--Opponent Score-->
+            <TextBlock Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" 
+                   Text="Opponent" FontSize="24" Foreground="White" Margin="10"/>
+
+            <NumberBox x:Name="SecondHalfOpponentScoreBox" Grid.Row="0" Grid.Column="2"
+                   Width="Auto" PlaceholderText="0" Margin="10" Minimum="0" Maximum="99"/>
+
+            <!--Comments-->
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Comments:" FontSize="24" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+            <TextBox x:Name="SecondHalfCommentsBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                 Width="Auto" TextWrapping="Wrap" PlaceholderText="Enter second half comments..." Margin="10, 10, 40, 10" MaxLength="280"/>
+
+        </Grid>
+
+        <!--Add Match Button-->
+        <Button x:Name="AddMatchButton" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Add Match" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="AddMatchButton_ClickAsync"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="11" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="18" FontStyle="Italic" Foreground="Gray" Margin="10" TextWrapping="Wrap" TextAlignment="Center"/>
+    </Grid>
+</Page>

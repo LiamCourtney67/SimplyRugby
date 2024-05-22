@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Portals.AdminPortal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Portals"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid>
+        <!--Admin Nav-->
+        <NavigationView x:Name="AdminNav"
+                        ItemInvoked="AdminNav_ItemInvoked" PaneDisplayMode="Top"
+                        IsBackButtonVisible="Collapsed" IsSettingsVisible="False"
+                        Background="White">
+            <NavigationView.Resources>
+                <SolidColorBrush x:Key="NavigationViewItemBackgroundPointerOver" Color="White" />
+                <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="#044d85" />
+            </NavigationView.Resources>
+
+            <NavigationView.MenuItems>
+
+                <!--Title-->
+                <NavigationViewItemHeader Content="Simply Rugby" Foreground="White" Background="#044d85" FontWeight="Bold"/>
+
+                <!--Team-->
+                <NavigationViewItem Content="Team" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="AddTeam" Content="Add Team" Background="#044d85"/>
+                        <NavigationViewItem Tag="ViewTeam" Content="View Team" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <!--Member-->
+                <NavigationViewItem Content="Member" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="AddMember" Content="Add Member" Background="#044d85"/>
+                        <NavigationViewItem Tag="ViewMember" Content="View Member" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <!--Coach-->
+                <NavigationViewItem Content="Coach" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="AddCoach" Content="Add Coach" Background="#044d85"/>
+                        <NavigationViewItem Tag="ViewCoach" Content="View Coach" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <!--Player-->
+                <NavigationViewItem Content="Player" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="AddPlayer" Content="Add Player" Background="#044d85"/>
+                        <NavigationViewItem Tag="ViewPlayer" Content="View Player" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <!--Match-->
+                <NavigationViewItem Content="Match" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="AddMatch" Content="Add Match" Background="#044d85"/>
+                        <NavigationViewItem Tag="ViewMatch" Content="View Match" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <!--Training-->
+                <NavigationViewItem Content="Training" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="AddTrainingSession" Content="Add Training" Background="#044d85"/>
+                        <NavigationViewItem Tag="ViewTrainingSession" Content="View Training" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <!--Accounts-->
+                <NavigationViewItem Content="Accounts" Background="#044d85">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Tag="ManageAccounts" Content="Manage Accounts" Background="#044d85"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+            </NavigationView.MenuItems>
+
+            <!--Account, Logout, and Help-->
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem x:Name="AccountUsername" Tag="ViewAccount" Background="#044d85"/>
+                <NavigationViewItem Tag="Logout" Content="Logout" Background="#044d85"/>
+                
+                <NavigationViewItem x:Name="HelpButton" Tag="Help" IsSelected="False">
+                    <FontIcon x:Name="HelpButtonIcon" Glyph="&#xE946;" FontFamily="Segoe MDL2 Assets"/>
+                </NavigationViewItem>
+                
+            </NavigationView.FooterMenuItems>
+
+            <!--Admin Frame-->
+            <ScrollViewer>
+                <Frame x:Name="AdminFrame" Background="#044d85"/>
+            </ScrollViewer>
+
+        </NavigationView>
+    </Grid>
+</Page>

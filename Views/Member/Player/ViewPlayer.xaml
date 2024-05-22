@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Member.Player.ViewPlayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Member.Player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" 
+               Text="View Player" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+
+        <!--Team Select (For Admin Only)-->
+        <TextBlock x:Name="TeamSelectTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Team:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="TeamBlock" Grid.Row="1" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" Visibility="Collapsed" TextWrapping="Wrap"/>
+
+        <ComboBox x:Name="TeamSelect" Grid.Row="1" Grid.Column="1"
+             HorizontalAlignment="Stretch" PlaceholderText="Select team..." Margin="10"
+             ItemsSource="{Binding}" DisplayMemberPath="Name" SelectionChanged="TeamSelect_SelectionChanged"/>
+
+        <!--Player Select-->
+        <TextBlock x:Name="PlayerSelectTitle" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Player:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="PlayerSelect" Grid.Row="2" Grid.Column="1"
+                 HorizontalAlignment="Stretch" PlaceholderText="Select player..." Margin="10"
+                 ItemsSource="{Binding}" DisplayMemberPath="Name" SelectionChanged="PlayerSelect_SelectionChanged"/>
+
+        <TextBlock x:Name="PlayerBlock" Grid.Row="2" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" Visibility="Collapsed" TextWrapping="Wrap"/>
+
+        <!--Name-->
+        <TextBlock x:Name="FirstNameTitle" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="First Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="FirstNameBlock" Grid.Row="3" Grid.Column="1"
+               Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="FirstNameBox" Grid.Row="3" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter first name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+        <TextBlock x:Name="LastNameTitle" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Last Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="LastNameBlock" Grid.Row="4" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="LastNameBox" Grid.Row="4" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter last name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+        <!--DOB-->
+        <TextBlock x:Name="DOBTitle" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Date of Birth:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="DOBBlock" Grid.Row="5" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10"/>
+
+        <DatePicker x:Name="DOBBox" Grid.Row="5" Grid.Column="1"
+                HorizontalAlignment="Stretch" Date="{Binding}" Width="Auto" Margin="10" Visibility="Collapsed"/>
+
+        <!--SRU Number-->
+        <TextBlock x:Name="SRUTitle" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="SRU Number:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="SRUBlock" Grid.Row="6" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <NumberBox x:Name="SRUBox" Grid.Row="6" Grid.Column="1"
+               Width="Auto" PlaceholderText="Enter SRU number..." Value="{Binding}" Margin="10" Visibility="Collapsed" Minimum="0" Maximum="2147483647"/>
+
+        <!--Address-->
+        <TextBlock x:Name="AddressTitle" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Address:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="AddressBlock" Grid.Row="7" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="AddressBox" Grid.Row="7" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter address..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="35"/>
+
+        <!--Postcode-->
+        <TextBlock x:Name="PostcodeTitle" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Postcode:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="PostcodeBlock" Grid.Row="8" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="PostcodeBox" Grid.Row="8" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter postcode..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="8"/>
+
+        <!--Email-->
+        <TextBlock x:Name="EmailTitle" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Email:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="EmailBlock" Grid.Row="9" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="EmailBox" Grid.Row="9" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter email..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap"/>
+
+        <!--Mobile Phone-->
+        <TextBlock x:Name="MobilePhoneTitle" Grid.Row="10" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Mobile Phone:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="MobilePhoneBlock" Grid.Row="10" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="MobilePhoneBox" Grid.Row="10" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter mobile phone..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+
+        <!--Telephone-->
+        <TextBlock x:Name="TelephoneTitle" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Telephone:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBlock x:Name="TelephoneBlock" Grid.Row="11" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+        <TextBox x:Name="TelephoneBox" Grid.Row="11" Grid.Column="1"
+             Width="Auto" PlaceholderText="Enter telephone..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+
+        <!--Position Select-->
+        <TextBlock x:Name="PositionsSelectTitle" Grid.Row="12" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Positions:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="PositionsSelect" Grid.Row="12" Grid.Column="1"
+                  HorizontalAlignment="Stretch" PlaceholderText="View positions..." Margin="10" SelectionChanged="PositionsSelect_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding Name}" Tag="{Binding}" IsEnabled="False"                       
+                              Loaded="PositionCheckBox_Loaded" Checked="PositionCheckBox_Checked" Unchecked="PositionCheckBox_Unchecked"
+                              HorizontalAlignment="Stretch" Background="Transparent" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <Grid x:Name="MedicalFields" Grid.Row="13" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Medical-->
+            <TextBlock x:Name="MedicalTitle" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                   Text="Medical" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+            <!--Doctor Name-->
+            <TextBlock x:Name="DoctorNameTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Doctor Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="DoctorNameBlock" Grid.Row="1" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="DoctorNameBox" Grid.Row="1" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter doctor name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Doctor Telephone-->
+            <TextBlock x:Name="DoctorTelephoneTitle" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Doctor Telephone:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="DoctorTelephoneBlock" Grid.Row="2" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="DoctorTelephoneBox" Grid.Row="2" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter doctor telephone..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+
+            <!--Doctor Address-->
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Doctor Address:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="DoctorAddressBlock" Grid.Row="3" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="DoctorAddressBox" Grid.Row="3" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter doctor address..." Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="50"/>
+
+            <!--Health Conditions-->
+            <TextBlock x:Name="HealthConditionsTitle" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Health Conditions:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="HealthConditionsBlock" Grid.Row="4" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="HealthConditionsBox" Grid.Row="4" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter health conditions..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="50"/>
+        </Grid>
+
+        <Grid x:Name="SeniorPlayerFields" Grid.Row="14" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Next of Kin-->
+            <TextBlock x:Name="KinTitle" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                   Text="Next of Kin" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+            <!--Next of Kin First Name-->
+            <TextBlock x:Name="KinFirstNameTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="First Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="KinFirstNameBlock" Grid.Row="1" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="KinFirstNameBox" Grid.Row="1" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter next of kin first name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Next of Kin Last Name-->
+            <TextBlock x:Name="KinLastNameTitle" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Last Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="KinLastNameBlock" Grid.Row="2" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="KinLastNameBox" Grid.Row="2" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter next of kin last name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Next of Kin Telephone-->
+            <TextBlock x:Name="KinTelephoneTitle" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Telephone:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="KinTelephoneBlock" Grid.Row="3" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="KinTelephoneBox" Grid.Row="3" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter next of kin telephone..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+        </Grid>
+
+        <Grid x:Name="JuniorPlayerFields" Grid.Row="15" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Guardian-->
+            <TextBlock x:Name="GuardianTitle" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                   Text="Guardian" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+            <!--Guardian First Name-->
+            <TextBlock x:Name="GuardianFirstNameTitle" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="First Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="GuardianFirstNameBlock" Grid.Row="1" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="GuardianFirstNameBox" Grid.Row="1" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian first name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Guardian Last Name-->
+            <TextBlock x:Name="GuardianLastNameTitle" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Last Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="GuardianLastNameBlock" Grid.Row="2" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="GuardianLastNameBox" Grid.Row="2" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian last name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Guardian Relationship-->
+            <TextBlock x:Name="GuardianRelationshipTitle" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Relationship:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="GuardianRelationshipBlock" Grid.Row="3" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="GuardianRelationshipBox" Grid.Row="3" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian relationship..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Guardian Telephone-->
+            <TextBlock x:Name="GuardianTelephoneTitle" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Telephone:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="GuardianTelephoneBlock" Grid.Row="4" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="GuardianTelephoneBox" Grid.Row="4" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian telephone..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+
+            <!--Guardian Address-->
+            <TextBlock x:Name="GuardianAddressTitle" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Address:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="GuardianAddressBlock" Grid.Row="5" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="GuardianAddressBox" Grid.Row="5" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian address..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+
+            <!--Guardian Postcode-->
+            <TextBlock x:Name="GuardianPostcodeTitle" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Postcode:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="GuardianPostcodeBlock" Grid.Row="6" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="GuardianPostcodeBox" Grid.Row="6" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian postcode..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="8"/>
+
+            <!--Guardian 2-->
+            <TextBlock x:Name="Guardian2Title" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                   Text="Guardian" FontSize="32" FontWeight="Bold" Foreground="White" Margin="10"
+                   TextWrapping="WrapWholeWords" TextAlignment="Center"/>
+
+            <!--Guardian 2 First Name-->
+            <TextBlock x:Name="Guardian2FirstNameTitle" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="First Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="Guardian2FirstNameBlock" Grid.Row="8" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="Guardian2FirstNameBox" Grid.Row="8" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian first name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Guardian 2 Last Name-->
+            <TextBlock x:Name="Guardian2LastNameTitle" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Last Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="Guardian2LastNameBlock" Grid.Row="9" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="Guardian2LastNameBox" Grid.Row="9" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian last name..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Guardian 2 Relationship-->
+            <TextBlock x:Name="Guardian2RelationshipTitle" Grid.Row="10" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Relationship:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="Guardian2RelationshipBlock" Grid.Row="10" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="Guardian2RelationshipBox" Grid.Row="10" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian relationship..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="20"/>
+
+            <!--Guardian 2 Telephone-->
+            <TextBlock x:Name="Guardian2TelephoneTitle" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Telephone:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="Guardian2TelephoneBlock" Grid.Row="11" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="Guardian2TelephoneBox" Grid.Row="11" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian telephone..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="11"/>
+
+            <!--Guardian 2 Address-->
+            <TextBlock x:Name="Guardian2AddressTitle" Grid.Row="12" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Address:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="Guardian2AddressBlock" Grid.Row="12" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="Guardian2AddressBox" Grid.Row="12" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian address..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="35"/>
+
+            <!--Guardian 2 Postcode-->
+            <TextBlock x:Name="Guardian2PostcodeTitle" Grid.Row="13" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Postcode:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <TextBlock x:Name="Guardian2PostcodeBlock" Grid.Row="13" Grid.Column="1"
+                   Width="Auto" Text="{Binding}" FontSize="24" Margin="10" TextWrapping="Wrap"/>
+
+            <TextBox x:Name="Guardian2PostcodeBox" Grid.Row="13" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter guardian postcode..." Text="{Binding}" Margin="10" Visibility="Collapsed" TextWrapping="Wrap" MaxLength="8"/>
+
+            <!--Consent Form-->
+            <TextBlock x:Name="HasConsentFormTitle" Grid.Row="14" Grid.Column="0" HorizontalAlignment="Right" 
+               Text="Consent Form:" FontSize="24" Foreground="White" Margin="10"/>
+
+            <ComboBox x:Name="HasConsentFormBox" Grid.Row="14" Grid.Column="1"
+                  HorizontalAlignment="Stretch" PlaceholderText="Select option..." Margin="10" IsEnabled="False">
+                <ComboBoxItem Content="Yes"/>
+                <ComboBoxItem Content="No"/>
+            </ComboBox>
+        </Grid>
+
+        <!--Edit, Delete, Update, And Cancel Buttons-->
+        <Button x:Name="EditButton" Grid.Row="17" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Edit Player" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="EditButton_Click"/>
+
+        <Button x:Name="UpdateButton" Grid.Row="16" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Update Player" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="UpdateButton_Click" Visibility="Collapsed"/>
+
+        <Button x:Name="DeleteButton" Grid.Row="18" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="Delete Player" FontWeight="Bold" Width="300" Background="Red" Foreground="White"
+                Click="DeleteButton_Click"/>
+
+        <Button x:Name="CancelButton" Grid.Row="17" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="Cancel" FontWeight="Bold" Width="300" Background="Red" Foreground="White"
+                Click="CancelButton_Click" Visibility="Collapsed"/>
+
+        <!--View Player Skills Button-->
+        <Button x:Name="ViewSkillsButton" Grid.Row="16" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="View Skills" FontWeight="Bold" Width="300" Background="LightGray" Foreground="#044d85"
+                Click="ViewSkillsButton_Click" Visibility="Collapsed"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="19" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+           FontSize="18" FontStyle="Italic" Foreground="Gray" Margin="10" TextWrapping="Wrap"/>
+    </Grid>
+</Page>

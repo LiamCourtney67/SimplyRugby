@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SimplyRugby.Views.Team.AddTeam"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimplyRugby.Views.Team"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#044d85">
+
+    <Grid Width="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--Title-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                   Text="Add Team" FontSize="48" FontWeight="Bold" Foreground="White" Margin="10"/>
+        
+        <!--Name-->
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Name:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <TextBox x:Name="NameBox" Grid.Row="1" Grid.Column="1"
+                 Width="Auto" PlaceholderText="Enter team name..." Margin="10" TextWrapping="Wrap" MaxLength="20"/>
+
+        <!--Level-->
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                   Text="Level:" FontSize="24" Foreground="White" Margin="10"/>
+
+        <ComboBox x:Name="LevelSelect" Grid.Row="2" Grid.Column="1"
+                  HorizontalAlignment="Stretch" PlaceholderText="Select level..." Margin="10" ItemsSource="{Binding}"/>
+        
+        <!--Add Team Button-->
+        <Button x:Name="AddTeamButton" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="Add Team" FontWeight="Bold" Width="300" Margin="10" Background="White" Foreground="#044d85"
+                Click="AddTeamButton_ClickAsync"/>
+
+        <!--Error Text-->
+        <TextBlock x:Name="ErrorText" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="18" FontStyle="Italic" Foreground="Gray" Margin="10" TextWrapping="Wrap" TextAlignment="Center"/>
+    </Grid>
+</Page>
