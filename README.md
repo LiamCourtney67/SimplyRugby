@@ -1,0 +1,1 @@
+WinUI3 project for HND Software Development unit SCQF Level 8 Graded Unit 2 using an online Microsoft Azure SQL database. This was my first time using Entity Framework or another ORM within a project, as well as using an online SQL database with Microsoft Azure. This project has apporpiate documentation and diagrams in the Documetation folder.
